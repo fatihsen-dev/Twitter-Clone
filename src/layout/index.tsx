@@ -8,8 +8,8 @@ type Props = {
 
 export default function index({ children }: Props) {
    return (
-      <main className={`${inter.className} h-full bg-black text-white`}>
-         <div className="flex h-full container">
+      <main className={`${inter.className} h-full bg-black text-white overflow-auto`}>
+         <div className="flex h-full 2xl:container xl:container px-4">
             <Sidebar />
             <main className="flex-1 flex h-full">{children}</main>
          </div>

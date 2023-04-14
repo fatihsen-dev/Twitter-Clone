@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { BsThreeDots } from "react-icons/bs";
 
 import EmirPhoto from "@/assets/images/emir.jpg";
 import husseinPhoto from "@/assets/images/hussein.jpg";

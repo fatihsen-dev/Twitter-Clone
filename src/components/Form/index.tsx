@@ -50,7 +50,7 @@ export default function Form() {
                   </Menu>
                </div>
             )}
-            <input onFocus={() => setActive(true)} className="bg-transparent my-5 px-2 placeholder-textGray outline-none text-xl font-light" placeholder="What's happening?" type="text" />
+            <input onFocus={() => setActive(true)} className="bg-transparent my-3 px-2 placeholder-textGray outline-none text-xl font-light" placeholder="What's happening?" type="text" />
             {active && (
                <div className="flex justify-center relative mr-auto mb-3">
                   <Menu>
@@ -58,7 +58,7 @@ export default function Form() {
                         <RiEarthLine className="p-2 rounded-full box-content text-lg" />
                         <span className="text-[15px] font-semibold">Everyone can reply</span>
                      </Menu.Button>
-                     <Menu.Items className="whitespace-nowrap py-1 -left-14 overflow-hidden z-50 top-full flex flex-col absolute rounded-xl bg-black shadow-[0_0_10px_0px_rgba(255,255,255,0.3)]">
+                     <Menu.Items className="whitespace-nowrap py-1 -left-14 overflow-hidden z-20 top-full flex flex-col absolute rounded-xl bg-black shadow-[0_0_10px_0px_rgba(255,255,255,0.3)]">
                         <div className="py-2">
                            <span className="px-4 font-bold">Who can reply?</span>
                            <p className="text-sm text-textGray whitespace-normal px-4">Choose who can reply to this Tweet. Anyone mentioned can always reply.</p>
@@ -89,13 +89,13 @@ export default function Form() {
                   <button className="hover:bg-twitterBlue/10 w-[34px] h-[34px] transition-colors flex justify-center items-center rounded-full">
                      <MdOutlineGifBox />
                   </button>
-                  <button className="hover:bg-twitterBlue/10 w-[34px] h-[34px] transition-colors flex justify-center items-center rounded-full">
+                  <button className="hover:bg-twitterBlue/10 w-[34px] h-[34px] transition-colors 2xl:flex xl:flex lg:flex md:flex hidden justify-center items-center rounded-full">
                      <BiListOl className="text-2xl" />
                   </button>
                   <button className="hover:bg-twitterBlue/10 w-[34px] h-[34px] transition-colors flex justify-center items-center rounded-full">
                      <BiSmile />
                   </button>
-                  <button className="hover:bg-twitterBlue/10 w-[34px] h-[34px] transition-colors flex justify-center items-center rounded-full">
+                  <button className="hover:bg-twitterBlue/10 w-[34px] h-[34px] transition-colors 2xl:flex xl:flex lg:flex md:flex hidden justify-center items-center rounded-full">
                      <AiOutlineCalendar />
                   </button>
                   <button className="hover:bg-twitterBlue/10 w-[34px] h-[34px] transition-colors flex justify-center items-center rounded-full">

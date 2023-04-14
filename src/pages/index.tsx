@@ -1,124 +1,128 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Layout from "@/layout";
+import Search from "@/components/Search";
+import TrendsForYou from "@/components/TrendsForYou";
+import WhoToFollow from "@/components/WhoToFollow";
+import Head from "next/head";
+import Policy from "@/components/Policy";
+import Form from "@/components/Form";
+import Post from "@/components/Post";
+import { useState } from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+export const data = [
+   {
+      avatar: "https://pbs.twimg.com/profile_images/1598959528518643713/aWdwBYxv_400x400.jpg",
+      name: "trash",
+      username: "trashh_dev",
+      date: "12m",
+      text: "did you know you can use key remapping to filter out types you don't want? here we can filter out any property that isn't of type number. its pretty handy.",
+      image: "https://pbs.twimg.com/media/FtjOaquaEAE5dyu?format=jpg&name=large",
+      comment: 16,
+      retweet: 19,
+      like: "209",
+      view: "26.7K",
+      Verified: true,
+   },
+   {
+      avatar: "https://pbs.twimg.com/profile_images/1117224716090204160/JGRnkbHy_400x400.jpg",
+      name: "Sinemori",
+      username: "sinemori",
+      date: "20h",
+      text: "HBO, The Conjuring evreninde geçecek bir dizi için çalışmalara başladı 👀",
+      image: "https://pbs.twimg.com/media/Fth_FdjXwBQ5mx4?format=jpg&name=large",
+      comment: 76,
+      retweet: 115,
+      like: "1,605",
+      view: "127.2K",
+      Verified: true,
+   },
+   {
+      avatar: "https://pbs.twimg.com/profile_images/1558488044541546496/F0kS6Z9p_400x400.jpg",
+      name: "annie",
+      username: "soychotic",
+      date: "22h",
+      text: "Does anyone know what these vibes are called and how can I make every room in my house have these vibes",
+      image: "https://pbs.twimg.com/media/FthnzZFXoAERWSI?format=jpg&name=large",
+      comment: 58,
+      retweet: 14,
+      like: "282",
+      view: "38,6K",
+      Verified: true,
+   },
+   {
+      avatar: "https://pbs.twimg.com/profile_images/1573897372408901637/Q8g6SXFM_400x400.jpg",
+      name: "Chris Staudinger",
+      username: "ChrisStaud",
+      date: "8h",
+      text: "ChatGPT is phenomenal. But it has limits. These tools will reduce work hours where ChatGPT cannot:",
+      image: "",
+      comment: 27,
+      retweet: 38,
+      like: "208",
+      view: "92,2K",
+      Verified: true,
+   },
+   {
+      avatar: "https://pbs.twimg.com/profile_images/1534700564810018816/anAuSfkp_400x400.jpg",
+      name: "jhey 🔨🐻✨",
+      username: "jh3yy",
+      date: "Mar 31",
+      text: "When you need the roundest rounded border in CSS without making a circle... p.s This is valid CSS 👀",
+      image: "https://pbs.twimg.com/media/Fsj93MTWAAcZ0dD?format=jpg&name=large",
+      comment: 30,
+      retweet: 88,
+      like: "949",
+      view: "158,4K",
+      Verified: false,
+   },
+];
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+   const [active, setActive] = useState(false);
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+   return (
+      <>
+         <Head>
+            <title>Home / Twitter</title>
+         </Head>
+         <Layout>
+            <div className="rightbar flex-1 h-fit border-x border-darkTwo relative flex flex-col max-w-2xl">
+               <div className="flex flex-col gap-2 w-full sticky top-0 z-50 bg-dark bg-opacity-20 backdrop-blur border-b border-darkTwo">
+                  <div className="p-3 px-4 text-xl font-bold">
+                     <span>Home</span>
+                  </div>
+                  <div className="flex font-medium">
+                     <div onClick={() => setActive(false)} className="flex-1 cursor-pointer flex justify-center hover:bg-darkTwo/50 transition-colors">
+                        <button className={`${!active ? "border-b-2 border-twitterBlue text-white" : "text-textGray"} border-b-2 border-transparent text-center py-3`}>For you</button>
+                     </div>
+                     <div onClick={() => setActive(true)} className="flex-1 cursor-pointer flex justify-center hover:bg-darkTwo/50 transition-colors">
+                        <button className={`${active ? "border-b-2 border-twitterBlue text-white" : "text-textGray"} border-b-2 border-transparent text-center py-3`}>Following</button>
+                     </div>
+                  </div>
+               </div>
+               <div className="flex-1 bg-black">
+                  <Form />
+                  {data.map((dt, index) => (
+                     <Post key={index} data={dt} />
+                  ))}
+               </div>
+            </div>
+            <div className="h-full sticky ml-4 2xl:flex xl:flex lg:flex 2xl:w-[360px] lg:w-[360px] w-[300px] hidden">
+               <div className="rightbar pb-5 flex flex-col gap-3 fixed 2xl:w-[360px] lg:w-[360px] w-[300px] top-0 h-full overflow-auto">
+                  <Search />
+                  <div className="rightbar flex flex-col gap-3">
+                     <li>
+                        <TrendsForYou />
+                     </li>
+                     <li>
+                        <WhoToFollow />
+                     </li>
+                     <li>
+                        <Policy />
+                     </li>
+                  </div>
+               </div>
+            </div>
+         </Layout>
+      </>
+   );
 }
