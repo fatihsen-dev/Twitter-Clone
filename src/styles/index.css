@@ -1,0 +1,21 @@
+@import "./reset.css";
+@import "./tailwind.css";
+
+.rightbar::-webkit-scrollbar {
+   width: 1px;
+}
+
+.rightbar::-webkit-scrollbar-track {
+   border-radius: 100vh;
+   background: transparent;
+}
+
+.rightbar::-webkit-scrollbar-thumb {
+   background: transparent;
+   border-radius: 100vh;
+   border: 3px solid transparent;
+}
+
+.rightbar::-webkit-scrollbar-thumb:hover {
+   background: transparent;
+}
